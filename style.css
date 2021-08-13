@@ -1,0 +1,191 @@
+:root {
+    --color-white: white;
+    --color-gray: rgba(128, 128, 128, 0.646);
+    --color-red: rgba(187, 15, 15, 0.632);
+    --survey-font: "Courier", "Arial", sans-serif;
+    --meny-font: "Helvetica", "Arial", sans-serif;
+    --xsmall-fontsize: 15px;
+    --small-fontsize: 15px;
+    --medium-fontsize: 20px;
+    --xmedium-fontsize: 22px;
+    --large-fontsize: 35px;
+    --xlarge-fontsize: 45px;
+}
+
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: 
+    linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em), 
+    linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);
+    background-size: 100% 2em;
+    z-index: -1;
+}
+
+header {
+    height: 100%;
+}
+
+main {
+    width: 100%;
+    margin: 20px auto 0 auto;
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-areas: 
+    ". head ."
+    ". survey ."
+    ". footer .";
+    grid-template-rows: 100px 1150px;
+}
+
+h1,
+h2 {
+    font-family: var(--survey-font);
+    font-size: var(--xlarge-fontsize);
+}
+p {
+    font-family: var(--survey-font);
+    font-size: var(--xmedium-fontsize);
+    margin: 5px;
+    text-shadow: 1px 1px 2px grey;
+}
+
+.clue {
+    font-size: 15px;
+}
+
+.header {
+    grid-area: head;
+    text-align: center;
+}
+
+#survey-form {
+    grid-area: survey;
+    width: 100%;
+    min-height: 1000px;
+    max-width: 720px;
+    border: solid 1px black;
+    margin: 0 auto 0 auto;
+    padding: 20px 50px;
+    box-shadow: 3px 3px 5px black;
+    background-color: whitesmoke;
+}
+
+.label {
+    font-family: var(--survey-font);
+    font-size: var(--medium-fontsize);
+    text-shadow: 1px 1px 2px grey;
+}
+
+.form-group {
+    display: block;
+    width: 100%;
+    margin: 40px 0 40px 0;
+}
+
+.form-control {
+    display: block;
+    align-self: center;
+    width: 100%;
+    margin: 5px 0 20px 0;
+    font-family: var(--meny-font);
+    font-size: var(--small-fontsize);
+    border-radius: 5px;
+    padding: 5px;
+    border: solid black 2px;
+}
+
+select {
+    width: 100%;
+    font-size: var(--meny-font);
+    border: solid black 2px;
+    color: gray;
+}
+
+option {
+    color: black;
+}
+
+option:first-child {
+    color: gray;
+}
+
+input {
+    padding: 5px;
+}
+
+
+
+li {
+    list-style-type: none;
+    margin: 10px 20px 20px 20px;
+}
+
+label {
+    font-style: var(--meny-font);
+    font-size: var(--medium-fontsize);
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    font-family: var(--meny-font);
+    font-size: var(--small-fontsize);
+}
+
+#submit {
+    display: block;
+    align-self: center;
+    width: 100%;
+    margin: 5px 0 20px 0;
+    font-family: var(--meny-font);
+    font-size: var(--small-fontsize);
+    color: white;
+    background-color: crimson;
+    border-radius: 5px;
+    padding: 5px;
+    border: solid black 2px;
+}
+
+.footer-section {
+    grid-area: footer;
+    text-align: center;
+    font-size: var(--xsmall-fontsize);
+    display: block;
+    position: relative;
+    margin: 10px;
+}
+
+.footer-section p {
+    font-size: var(--xsmall-fontsize);
+}
+/* Media Query */
+
+/* Iphone 6 */
+
+@media (max-width: 375px) {
+    #survey-form {
+        grid-area: survey;
+        width: 100%;
+        min-height: 1250px;
+        max-width: 720px;
+        border: solid 1px black;
+        margin: 0 auto 0 auto;
+        padding: 20px 50px;
+        box-shadow: 3px 3px 5px black;
+        background-color: whitesmoke;
+    }
+
+    .footer-section {
+        top: 110px;
+    }        
+}
